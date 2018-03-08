@@ -1,0 +1,33 @@
+<br>
+<h1>Angular5 Server Side Rendering + Firebase(AngularFire2) Realtime Database</h1>
+<br>
+<div>
+  <h3>Object Data</h3>
+  <ul>
+    <div *ngIf="(objectDataObserverble | async) || {};let objectData">
+      <div>
+        <h4>{{objectData.name}}</h4>
+      </div>
+    </div>
+  </ul>
+</div>
+<br>
+<div>
+  <h3>List Data</h3>
+  <div>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+        </tr>
+        <tr *ngFor="let item of listDataObserverble | async;let row = index">
+          <td>{{row+1}}</td>
+          <td>{{item.name}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
